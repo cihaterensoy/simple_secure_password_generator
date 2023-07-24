@@ -14,19 +14,21 @@ class random_pass():
         return self.data
 
     def create_pass(self):
-        pass_list = list()
+        self.pass_list = list()
         for i in range(12):
-            pass_list.append(random.choice(self.Chars))
-
-            if pass_list[i] == pass_list[i-1]:
+            self.pass_list.append(random.choice(self.Chars))
+            if i == 0:
                 pass
-        print(pass_list)
+            elif self.pass_list[i] == self.pass_list[i-1]:
+                self.pass_list[i] = random.choice(self.Chars)
+
 
 
 if __name__ == "__main__":
     password = random_pass()
     password.parseinfo()
     password.create_pass()
+    print(f"Your secure password {''.join(password.pass_list)}")
 
 
 
