@@ -15,7 +15,7 @@ class random_pass():
 
     def create_pass(self):
         self.pass_list = list()
-        for i in range(self.data.length):
+        for i in range(int(self.data.length)):
             self.pass_list.append(random.choice(self.Chars))
             if i == 0:
                 pass
